@@ -1,0 +1,230 @@
+config-version: 1
+debug: false
+
+# Command Whitelist (Master — synced to all Paper backends via minewar:sync)
+command-whitelist:
+  enabled: true
+  per-permission: false
+  bypass-permission: "minewar.admin.tab"
+  # Servers listed here bypass all tab-complete filtering entirely.
+  # Players on these servers see all commands and suggestions unfiltered.
+  disabled-servers: []
+  allowed:
+  - spawn
+  - buildmode
+  - bm
+  - coinflip
+  - cf
+  - fly
+  - minewarutils
+  - mu
+  - help
+  - server
+  - play
+  - hub
+  - lobby
+  - msg
+  - message
+  - reply
+  - r
+
+# Global Feature Toggles
+modules:
+  discord-sync:
+    enabled: true
+    channel_id: "YOUR_SYNC_CHANNEL_ID"
+    webhook_url: "YOUR_WEBHOOK_URL_HERE"
+  auto-vanish:
+    enabled: true
+  aliases:
+    enabled: true
+  alert-logging:
+    enabled: true
+  private-messaging:
+    enabled: true
+  vanish:
+    enabled: true
+  seen-tracking:
+    enabled: true
+  first-join-tracking:
+    enabled: true
+  ignore-system:
+    enabled: true
+
+# Restart Configuration
+ProxyRestart:
+  defaultRestartTime: 600
+  broadcastIntervals:
+    - 600
+    - 300
+    - 60
+    - 30
+    - 10
+    - 5
+    - 4
+    - 3
+    - 2
+    - 1
+
+# Navigation
+Servers:
+  # List of servers to show in the custom /server GUI/List
+  - "lobby"
+  - "survival"
+  - "creative"
+
+slashserver:
+  # Command alias -> Target Server
+  plots: "creative"
+  survival: "survival"
+  hub: "lobby"
+
+# Discord Configuration
+discord:
+  token: "MTQ2Njc3NDMyOTkxNTIxNjAzOQ.GjdVOz.pd_HDc1kmKVvC7-Es_rshKiD9P49AX1T476ZJA"
+  guild_id: "1344086250172317727"
+  # Role ID to apply immediately when a user links their account.
+  linked_role_id: "1344086250172317727"
+  alert-log-channel: "YOUR_ALERT_LOG_CHANNEL_ID"
+  
+  # Role IDs allowed to use the Discord /alert command
+  permissions:
+    alert-roles:
+      - "1344658065093431307" # Admin
+      - "1447966787818754118" # Manager
+      
+  roles:
+    default: "1344658685967859752"
+    sergeant: "1465397643504255148"
+    lieutenant: "1465399312119759060"
+    major: "1465399746154991807"
+    general: "1465399881526022327"
+    vip: "1372283555090006217"
+    builder: "1344656654360379453"
+    mod: "1344658001692327997"
+    srmod: "1455951746747596880"
+    admin: "1344658065093431307"
+    dev: "1344656730050662410"
+    devlead: "1344656730050662410"
+    manager: "1447966787818754118"
+    owner: "1466874937473110211"
+
+# Command Aliases (New Structure)
+Commands:
+  seen:
+    aliases: ["check", "playerinfo", "lastlogin"]
+    enabled: true
+  firstjoin:
+    aliases: ["fj"]
+    enabled: true
+  list:
+    aliases: ["online", "players", "glist"]
+    enabled: true
+  staffchat:
+    aliases: ["sc", "s"]
+    enabled: true
+  msg:
+    aliases: ["w", "m", "tell", "whisper"]
+    enabled: true
+  reply:
+    aliases: ["r"]
+    enabled: true
+  adminreply:
+    aliases: ["ar", "radmin"]
+    enabled: true
+  msgtoggle:
+    aliases: ["pms", "togglexchat"]
+    enabled: true
+  socialspy:
+    aliases: ["spy"]
+    enabled: true
+  ignore:
+    aliases: ["black"]
+    enabled: true
+  unignore:
+    aliases: ["white"]
+    enabled: true
+  vanish:
+    aliases: ["v"]
+    enabled: true
+  alert:
+    aliases: ["broadcast", "bc"]
+    enabled: true
+  find:
+    aliases: ["whereis"]
+    enabled: true
+  proxy_restart:
+    aliases: ["prestart"]
+    enabled: true
+  server_command:
+    aliases: ["srv"]
+    enabled: true
+  minewarvelocity:
+    aliases: ["mwvelocity", "velocityutils"]
+    enabled: true
+  whois:
+    aliases: ["w"] # Careful with msg "m" and whois "w"
+    enabled: true
+  discord:
+    aliases: ["link"]
+    enabled: true
+  adminmessage:
+    aliases: ["am", "adminmsg", "msgadmin"]
+    enabled: true
+
+
+# Chat & Formatting
+global-chat:
+  enabled: true
+  mention-sound: "entity.experience_orb.pickup"
+  mention-color: "<gold>"
+  owner-color: "<#0adef7>"
+  first-join-broadcast-enabled: true
+
+# Permissions
+permissions:
+  seen: "minewar.seen"
+  find: "minewar.find"
+  staffchat: "minewar.staffchat"
+  staffchat_use: "minewar.staffchat.use"
+  staffchat_see: "minewar.staffchat.see"
+  discord_users: "minewar.discord.users"
+  msg: "minewar.msg"
+  reply: "minewar.reply"
+  socialspy: "minewar.socialspy"
+  whois: "minewar.discord.whois"
+  discord_link: "minewar.discord.link"
+  discord_unlink: "minewar.discord.unlink"
+  msg_toggle: "minewar.msgtoggle"
+  ignore: "minewar.ignore"
+  firstjoin: "minewar.firstjoin"
+  alert: "minewar.alert"
+  alert_reload: "minewar.alert.reload"
+  vanish: "minewar.vanish"
+  vanish_admins: "minewar.vanish.admins"
+  vanish_see: "minewar.vanish.see"
+  vanish_admins_see: "minewar.vanish.admins.see"
+  vanish_auto: "minewar.vanish.auto"
+  list: "minewar.list"
+  list_staff: "minewar.list.staff"
+  server_command: "minewar.server" # Custom Server List
+  slash_server: "minewar.slashserver" # Permission for /plots, /survival etc
+  proxy_restart: "minewar.restart"
+  proxy_restart_cancel: "minewar.restart.cancel"
+  minewarvelocity_base: "minewarvelocity.base"
+  minewarvelocity_reload: "minewarvelocity.reload"
+  adminmessage: "minewar.adminmessage"
+  adminreply: "minewarvelocity.adminreply"
+  global_chat: "minewar.chat.global"
+  owner_chat: "minewar.chat.owner"
+
+# Storage Settings
+storage:
+  storage-type: H2 # H2 or MARIADB
+  
+  mariadb:
+    host: "localhost"
+    port: 3306
+    database: "minecraft"
+    username: "root"
+    password: "password"

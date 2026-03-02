@@ -1,0 +1,259 @@
+config-version: 2
+debug: false
+
+# Command Whitelist (Master — synced to all Paper backends via minewar:sync)
+command-whitelist:
+  enabled: true
+  per-permission: true
+  bypass-permission: "minewar.admin.tab"
+  # Servers listed here bypass all tab-complete filtering entirely.
+  # Players on these servers see all commands and suggestions unfiltered.
+  disabled-servers: []
+  allowed:
+  - spawn
+  - buildmode
+  - bm
+  - coinflip
+  - cf
+  - fly
+  - minewarutils
+  - mu
+  - help
+  - server
+  - play
+  - hub
+  - lobby
+  - msg
+  - message
+  - reply
+  - r
+  - ignore
+  - block
+  - unblock
+  - unignore
+  - minewarvelocity
+  - mwv
+  - mwu
+  - find
+  - seen
+  - whereis
+  - lastlogin
+  - lastseen
+  - tpa
+  - tpaccept
+  - tpdeny
+  - tpcancel
+  - discord
+  - flyspeed
+  - msgtoggle
+  - togglepm
+
+# Global Feature Toggles
+modules:
+  discord-sync:
+    enabled: true
+    channel_id: "YOUR_SYNC_CHANNEL_ID"
+    webhook_url: "YOUR_WEBHOOK_URL_HERE"
+  auto-vanish:
+    enabled: true
+  aliases:
+    enabled: true
+  alert-logging:
+    enabled: true
+  private-messaging:
+    enabled: true
+  vanish:
+    enabled: true
+  seen-tracking:
+    enabled: true
+  first-join-tracking:
+    enabled: true
+  ignore-system:
+    enabled: true
+
+# Restart Configuration
+ProxyRestart:
+  defaultRestartTime: 600
+  broadcastIntervals:
+    - 600
+    - 300
+    - 60
+    - 30
+    - 10
+    - 5
+    - 4
+    - 3
+    - 2
+    - 1
+
+# Navigation
+Servers:
+  # List of servers to show in the custom /server GUI/List
+  - "Hub"
+  - "Survival"
+
+slashserver:
+  # Command alias -> Target Server
+  hub: "hub"
+  survival: "survival"
+  staff: "staff"
+
+# Discord Configuration
+discord:
+  token: "MTQ2MzkzNTU2OTEyMDk4OTM1OQ.GBQR5C.WKKpwLoGHaDY8voISlTo0z1hCr-m9jv3JB_P2I"
+  guild_id: '1344086250172317727'
+  linked_role_id: '1466874937473110211'
+  alert-log-channel: '1463542234916847738'
+  balert_channel_id: "1463542234916847738"
+  
+  # Status & Visibility (ONLINE, IDLE, DND, INVISIBLE)
+  BOT_STATUS: "Watching Minewar"
+  Visibility: "IDLE"
+  
+  # Role IDs allowed to use the Discord /alert command
+  permissions:
+    alert-roles:
+      - "1344656173499940926" # Owner
+      - "1447966787818754118" # Manager
+      
+  roles:
+    default: "1344658685967859752"
+    squire: "1465397643504255148"
+    knight: "1465399312119759060"
+    prince: "1465399746154991807"
+    king: "1465399881526022327"
+    vip: "1372283555090006217"
+    builder: "1344656654360379453"
+    mod: "1344658001692327997"
+    srmod: "1455951746747596880"
+    admin: "1344658065093431307"
+    dev: "1344656730050662410"
+    manager: "1447966787818754118"
+    owner: "1466874937473110211"
+
+# Command Aliases (New Structure)
+Commands:
+  seen:
+    aliases: ["check", "playerinfo", "lastlogin"]
+    enabled: true
+  firstjoin:
+    aliases: ["fj"]
+    enabled: true
+  list:
+    aliases: ["online", "players", "glist", "who"]
+    enabled: true
+  staffchat:
+    aliases: ["sc", "s"]
+    enabled: true
+  msg:
+    aliases: ["w", "m", "tell", "whisper", "pm"]
+    enabled: true
+  reply:
+    aliases: ["r"]
+    enabled: true
+  adminreply:
+    aliases: ["ar", "radmin", "ra"]
+    enabled: true
+  msgtoggle:
+    aliases: ["pms", "togglepm", "msgtoggle"]
+    enabled: true
+  socialspy:
+    aliases: ["spy"]
+    enabled: true
+  ignore:
+    aliases: ["block"]
+    enabled: true
+  unignore:
+    aliases: ["unblock"]
+    enabled: true
+  vanish:
+    aliases: ["v"]
+    enabled: true
+  alert:
+    aliases: ["broadcast", "bc"]
+    enabled: true
+  find:
+    aliases: ["whereis"]
+    enabled: true
+  proxy_restart:
+    aliases: ["prestart"]
+    enabled: true
+  server_command:
+    aliases: ["srv"]
+    enabled: true
+  minewarvelocity:
+    aliases: ["mwvelocity", "velocityutils", "mwv"]
+    enabled: true
+  whois:
+    aliases: ["userinfo"] # Careful with msg "m" and whois "w"
+    enabled: true
+  discord:
+    aliases: ["link"]
+    enabled: true
+  adminmessage:
+    aliases: ["am", "adminmsg", "msgadmin", "ma"]
+    enabled: true
+  balert:
+    aliases: ["consolealert"]
+    enabled: true
+
+
+# Chat & Formatting
+global-chat:
+  enabled: true
+  first-join-broadcast-enabled: true
+
+# Permissions
+permissions:
+  seen: "minewar.seen"
+  find: "minewar.find"
+  staffchat: "minewar.staffchat"
+  staffchat_use: "minewar.staffchat.use"
+  staffchat_see: "minewar.staffchat.see"
+  discord_users: "minewar.discord.users"
+  msg: "minewar.msg"
+  reply: "minewar.reply"
+  socialspy: "minewar.socialspy"
+  whois: "minewar.discord.whois"
+  discord_link: "minewar.discord.link"
+  discord_unlink: "minewar.discord.unlink"
+  msg_toggle: "minewar.msgtoggle"
+  ignore: "minewar.ignore"
+  firstjoin: "minewar.firstjoin"
+  alert: "minewar.alert"
+  alert_reload: "minewar.alert.reload"
+  vanish: "minewar.vanish"
+  vanish_admins: "minewar.vanish.admins"
+  vanish_see: "minewar.vanish.see"
+  vanish_admins_see: "minewar.vanish.admins.see"
+  vanish_auto: "minewar.vanish.auto"
+  list: "minewar.list"
+  list_staff: "minewar.list.staff"
+  server_command: "minewar.server" # Custom Server List
+  slash_server: "minewar.slashserver" # Permission for /plots, /survival etc
+  proxy_restart: "minewar.restart"
+  proxy_restart_cancel: "minewar.restart.cancel"
+  minewarvelocity_base: "minewarvelocity.base"
+  minewarvelocity_reload: "minewarvelocity.reload"
+  adminmessage: "minewar.adminmessage"
+  adminreply: "minewarvelocity.adminreply"
+  global_chat: "minewar.chat.global"
+  owner_chat: "minewar.chat.owner"
+
+# Storage Settings
+storage:
+  storage-type: H2 # H2 or MARIADB
+
+  # NUCLEAR RESET (Migration v3)
+  # Set to true to TRUNCATE seen_data on next startup.
+  # Once the truncation runs, a lock flag (migration_v3_complete) is written to
+  # plugin_metadata and the reset will NEVER run again, even if this stays true.
+  # Default: false (safe — no data is ever deleted unless you explicitly set this).
+  confirm-nuclear-reset: false
+
+  mariadb:
+    host: "localhost"
+    port: 3306
+    database: "minecraft"
+    username: "root"
+    password: "password"

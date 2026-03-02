@@ -1,0 +1,189 @@
+config-version: 16
+
+# Generic Error Messages
+error:
+  no-permission: "&cYou do not have permission to do this."
+  players-only: "&cOnly players can use this command."
+  invalid-player: "&cThe player &b%target% &cwas not found."
+  invalid-number: "&cInvalid number: &b%input%"
+  command-denied: "&cYou do not have permission to use this command."
+seen-message: "%player% was seen %time% ago"
+usage-seen: "Usage: /seen %player%"
+find-message: "Player %player% is online %server%"
+find-not-found: "Player %player% is not online."
+usage-find: "&cUsage: /find <player>"
+player-not-found-seen: "Player %player% has never joined."
+never-joined: "&cPlayer %player% has never joined the server."
+never-seen: "&cPlayer %player% has no recorded activity."
+online-now: "Player %player% is online now on %server%."
+format-days: "d"
+format-hours: "h"
+format-minutes: "m"
+format-seconds: "s"
+format-days-full: " Days"
+format-months-full: " Months"
+format-years-full: " Years"
+
+# Private Messaging
+message-sent: "&7(To %suffix_other%%player%) &f%message%"
+message-received: "&7(From %suffix_other%%player%) &f%message%"
+pm-disabled-receiver: "&c%player% has private messaging disabled."
+pm-toggle-on: "&aPrivate messaging enabled."
+pm-toggle-off: "&cPrivate messaging disabled."
+no-reply-target: "&cYou have no one to reply to."
+first-join-message: "%suffix_other%%player% <gray>first joined on</gray> <white>%date%</white> <gray>(<yellow>%duration% Ago</yellow>)</gray>"
+usage-firstjoin: "&cUsage: /firstjoin <player>"
+pm-ignored: "&c%player% has ignored you."
+admin-message-sent: "&c[Admin] &7(To %player%) &f%message%"
+admin-message-received: "&c[Admin] &7(From %player%) &f%message%"
+usage-adminmessage: "&cUsage: /adminmessage <player> <message>"
+admin-reply-sent: "&c[Admin] &7(To %player%) &f%message%"
+admin-reply-received: "&c[Admin] &7(From %player%) &f%message%"
+usage-adminreply: "&cUsage: /adminreply <message>"
+usage-reply: "<red>Usage: /reply <message>"
+no-one-to-reply: "<red>You have no one to reply to!"
+reply-target-offline: "<red>The player you are replying to is no one longer online!"
+
+# Bot Messaging
+# (Now handled by Sahorah API)
+ignore-added: "&aYou are now ignoring %player%."
+ignore-removed: "&aYou are no longer ignoring %player%."
+ignore-already-ignored: "&cYou are already ignoring %player%."
+ignore-not-ignored: "&cYou are not ignoring %player%."
+ignore-list-empty: "&cYour ignore list is empty."
+ignore-list-format: "&7Ignored players: &f%players%"
+msg-player-not-found: "&cPlayer %player% is not online."
+social-spy-on: "&aSocial Spy enabled."
+social-spy-off: "&cSocial Spy disabled."
+social-spy-format: "&7[Spy] %sender_suffix%%sender% -> %receiver_suffix%%receiver%: &f%message%"
+staff-chat-format: "&b[Staff] %prefix%%player%: &f%message%"
+staff-chat-toggle-on: "&bStaff chat mode enabled."
+staff-chat-toggle-off: "&cStaff chat mode disabled."
+
+# Discord
+discord-link-invalid-code: "&cInvalid or expired link code."
+discord-link-expired: "&cLink code expired."
+discord-link-success: "&aSuccessfully linked your account!"
+discord-not-linked: "&cYou are not linked."
+discord-unlink-success: "&aSuccessfully unlinked."
+discord-usage: "&cUsage: /discord <link|unlink|users|whois>"
+discord-users-header: "&6Linked Users (%count%):"
+discord-users-item: "&a%player% &7-> &b%discord_name%"
+discord-users-empty: "&eNo users linked yet."
+discord-whois-usage: "&cUsage: /whois <player>"
+discord-whois-found: "&a%player% &7is linked to Discord user &b%discord_tag%"
+discord-user-not-found: "&cPlayer not found."
+discord-not-linked-other: "&c%player% is not linked to Discord."
+discord-to-mc-format: "<blue>[Discord]</blue> %suffix%%player%: %message%"
+mc-to-discord-webhook-format: "[%rank%] %player%"
+discord-unlinked-warning: "<red>Your Discord account is not linked to a Minecraft account. Use /discord link to sync.</red>"
+
+# Discord Embed Configuration (Keys used by DiscordManager)
+embed-color: "0x00FF00"
+embed-error-color: "0xFF0000"
+embed-title-link: "Account Link"
+embed-title-whois: "Player Info"
+embed-footer: "MinewarVelocity"
+
+reload-success: "<green>MinewarVelocity configuration reloaded successfully!"
+
+# AdminMessage
+adminmessage-sent: "<gray>[AdminMessage] To %player%: %message%"
+adminmessage-received: "<red>[AdminMessage] From %sender%: %message%"
+adminmessage-usage: "<red>Usage: /adminmessage <player> <message>"
+
+# Discord Command (In-Game)
+discord-cmd-usage: "&cUsage: /discord <link|unlink|users>"
+discord-already-linked: "&cYou are already linked! Use /discord unlink first."
+discord-link-code: "<green>Your link code is: <aqua><click:copy_to_clipboard:%code%><hover:show_text:'<gray>Click to copy'>%code%</hover></click>"
+discord-link-instruction: "&7Run &b/link %code% &7in the Discord server to complete the process."
+discord-not-linked-game: "&cYou are not linked."
+discord-unlink-success-game: "&aSuccessfully unlinked your account."
+discord-no-users-linked: "&eNo users linked yet."
+discord-linked-users-header: "&6Linked Users (%count%):"
+discord-linked-user-format: "&a- %uuid% -> Discord ID: %id%"
+discord-player-only: "&cThis command can only be used by players."
+discord-no-permission: "&cYou do not have permission."
+discord-link-discord-required: "<#ccffff>You must link your account to the discord first."
+usage-msg: "&cUsage: /msg <player> <message>"
+usage-reply: "&cUsage: /reply <message>"
+usage-ignore: "&cUsage: /ignore <player> or /ignore list"
+usage-unignore: "&cUsage: /unignore <player>"
+cannot-message-self: "&cYou cannot message yourself."
+cannot-ignore-self: "&cYou cannot ignore yourself."
+
+# /alert Command
+alert:
+  format: "<red>[Alert] <white><message>"
+  usage: "<red>Usage: /alert <channel_id (optional)> <message>"
+  reload-success: "<green>Alert configuration reloaded."
+  channel-not-found: "<red>Could not find a Discord channel named <yellow><channel><red>."
+
+# /server and /slashserver
+server:
+  only-players: "&cOnly players can use this command."
+  whitelist-empty: "<red>No servers configured in whitelist."
+  list-header: "<gold>Available Servers:"
+  list-item-format: " <gray>- <click:run_command:'/server %server%'><hover:show_text:'<green>Click to connect'><yellow>%server%</yellow></hover></click>"
+  not-found: "<red>Server %server% does not exist."
+  target-not-found: "<red>Target server '%server%' not found on proxy!"
+
+discord-embed:
+  color: "#FF0000"
+  title: ""
+  author: "Alert System"
+  footer: "{sender} %discord_username%"
+
+
+
+# Vanish Messages
+vanish-enabled: "<green>You are now vanished."
+vanish-disabled: "<red>You are no longer vanished."
+vanish-prefix: "&7[V] "
+vanish-fake-join: "<yellow>%player% joined the game"
+vanish-fake-leave: "<yellow>%player% left the game"
+vanish-tab-format: "<gray>[V] <reset>%luckperms_prefix%%player%"
+
+# Network Messages
+join-message: "<green>+ %player% connected to the network"
+leave-message: "<red>- %player% disconnected from the network"
+global-chat-format: "<white>%prefix_other%<gray>%player% <dark_gray>»</dark_gray> <#ccffff>%message%"
+owner-global-chat-format: "<white>%prefix_other%<gray>%player% <dark_gray>»</dark_gray> <#ccffff>%message%"
+# Note: Variables starting with % must be quoted in YAML
+global-chat-mention-format: "<yellow>@%player%</yellow>"
+first-join-welcome: "<yellow>Welcome <white>%player% <yellow>to the server for the first time!"
+
+# /list Command
+list-messages:
+  - "<gray>------------------------------------------------"
+  - "<green>Online Players: <white>{players_online} / {max_players}"
+  - ""
+  - "<gray>Staff Online:"
+  - "{staff_list}"
+  - ""
+  - "<gray>Players Online:"
+  - "{player_list}"
+  - "<gray>------------------------------------------------"
+list-player-format: "%suffix_other%%player_name%"
+list-staff-format: "%suffix_other%%player_name%"
+list-vanish-prefix: "<gray>[INVIS] "
+no-permission-list: "&cYou do not have permission to use the list command."
+
+# /proxyrestart
+restart-scheduled: "<green>Proxy restart scheduled for %seconds% seconds."
+restart-cancelled: "<red>Proxy restart has been cancelled."
+restart-not-running: "<red>There is no restart currently scheduled."
+restart-broadcast: "<red>[Alert] <yellow>Proxy restarting in <white>%time%"
+restart-now: "<red><b>Proxy Restarting Now!"
+restart-usage: "<red>Usage: /proxyrestart <seconds|cancel>"
+
+# /minewarvelocity
+minewarvelocity-header: "<blue><b>MinewarVelocity</b> <gray>v1.0-SNAPSHOT"
+minewarvelocity-reload: "<gray>- <click:run_command:'/minewarvelocity reload'><hover:show_text:'<green>Click to reload'><aqua>/minewarvelocity reload</aqua></hover></click> <gray>Reload configuration"
+usage-minewarvelocity: "&cUsage: /minewarvelocity reload"
+
+# Misc
+invalid-number: "&cInvalid number format."
+clear-success: "<green>Cleared all data for <white>%player%<green>. They will trigger first-join on next login."
+clear-not-found: "<red>No data found for player <white>%player%<red>."
+

@@ -1,0 +1,5 @@
+autoupload.sh
+.gradle/
+build/
+.DS_Store
+.DS_Store
